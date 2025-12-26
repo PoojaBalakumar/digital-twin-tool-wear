@@ -1,0 +1,86 @@
+# Multimodal Digital Twin for Tool Wear Prediction
+
+This repository contains the implementation of a **probabilistic multimodal digital twin** for indirect tool wear estimation using the **NASA Milling Tool Wear dataset**.  
+The system integrates high-frequency sensor signals with machine process parameters to predict tool wear and quantify predictive uncertainty, enabling **risk-aware parameter recommendations**.
+
+---
+
+## Problem Statement
+Manufacturing processes such as CNC milling are subject to **process drift**, which leads to tool wear, surface defects, and reduced product quality.  
+Traditional monitoring approaches rely on handcrafted features and threshold-based alarms, which fail to generalize across operating conditions.
+
+This project addresses the problem by developing a **data-driven digital twin** that:
+- Predicts tool wear from multimodal sensor data
+- Quantifies uncertainty in predictions
+- Provides safe, risk-aware parameter recommendations
+
+---
+
+## Dataset
+**NASA Milling Tool Wear Dataset** (NASA Open Data Portal)
+
+- High-frequency sensor signals:
+  - Spindle motor current (AC/DC)
+  - Table and spindle vibration
+  - Acoustic emission (AE)
+- Machine parameters:
+  - Depth of Cut (DOC)
+  - Feed rate
+  - Material
+- Target variable:
+  - Tool flank wear (VB)
+
+> Dataset is not included in this repository due to licensing restrictions.
+
+---
+
+## Methodology
+
+### Model Architecture
+- **CNN branch** for multichannel time-series sensor signals
+- **MLP branch** for tabular machine metadata
+- **Late fusion** of learned representations
+- **Probabilistic regression head** predicting:
+  - Mean tool wear
+  - Predictive uncertainty (heteroscedastic)
+
+### Key Techniques
+- Leakage-free normalization
+- Gaussian Negative Log-Likelihood (NLL) loss
+- Uncertainty-aware prediction
+- Sensor ablation (sensitivity analysis)
+- Risk-aware parameter optimization loop
+
+---
+
+## Experiments & Evaluation
+
+### Metrics
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Error (MAE)
+- R-squared (R²)
+- Worst-case error
+- Prediction bias
+
+### Analyses
+- Learning curves (loss & RMSE)
+- Predicted vs actual plots
+- Residual analysis
+- Sensor sensitivity ablation
+- Failure case investigation
+- Uncertainty calibration
+
+---
+
+## Implementation Details
+- Framework: **PyTorch**
+- Environment: **Google Colab**
+- Optimizer: Adam
+- Loss: Gaussian Negative Log-Likelihood
+- Batch size: 16
+- Epochs: 30
+- Random seed fixed for reproducibility
+
+---
+
+
