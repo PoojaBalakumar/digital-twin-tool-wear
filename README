@@ -30,7 +30,18 @@ This project addresses the problem by developing a **data-driven digital twin** 
 - Target variable:
   - Tool flank wear (VB)
 
-> Dataset is not included in this repository due to licensing restrictions.
+This project uses the **NASA Milling Tool Wear Dataset**, which cannot be redistributed due to licensing and file size constraints.
+
+Please download the dataset manually from the official NASA repository:
+
+NASA Milling Tool Wear Dataset  
+https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/
+
+After downloading:
+1. Extract the dataset
+2. Place the file `mill.mat` in the root directory of this repository
+
+
 
 ---
 
