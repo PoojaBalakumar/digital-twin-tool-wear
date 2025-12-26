@@ -1,0 +1,8 @@
+Upload the notebook to Google Colab
+Upload the dataset file (`mill.mat`) to Colab runtime
+Install dependencies:
+torch
+numpy
+scipy
+matplotlib
+scikit-learn
